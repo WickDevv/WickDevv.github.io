@@ -1,6 +1,6 @@
 body {
   background-color: #000000; /* Noir */
-  color: #FFFFFF; /* Blanc */
+  color: #F0F0F0; /* Gris clair (ou une autre teinte de gris que vous préférez) */
   font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   padding: 0;
@@ -52,7 +52,7 @@ button:hover {
   font-size: 16px;
   line-height: 1.5;
   margin: 10px;
-  color: #FFFFFF; /* Blanc */
+  color: #F0F0F0; /* Gris clair (ou votre alternative préférée) */
 }
 
 #movieImage {
