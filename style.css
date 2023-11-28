@@ -51,7 +51,7 @@ button:hover {
 #movieDetails p {
   font-size: 16px;
   line-height: 1.5;
-  margin: 10px; /* Ajout de marges à l'overview */
+  margin: 600px; /* Ajout de marges à l'overview */
 }
 
 #movieImage {
