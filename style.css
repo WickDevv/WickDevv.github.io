@@ -1,6 +1,6 @@
 body {
-  background-color: #000;
-  color: #ff0;
+  background-color: #000000; /* Noir */
+  color: #FFFFFF; /* Blanc */
   font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   padding: 0;
@@ -18,14 +18,15 @@ body {
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: #FFD700; /* Jaune doré */
 }
 
 button {
   background-color: transparent;
-  color: #ff0;
+  color: #FFD700;
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #ff0;
+  border: 2px solid #FFD700;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 20px;
@@ -33,11 +34,9 @@ button {
 
 button:hover {
   background-color: transparent;
-  border: 2px solid #2980b9;
-  color: #2980b9;
+  border: 2px solid #FF0000; /* Rouge cinéma lorsqu'il est survolé */
+  color: #FF0000; /* Rouge cinéma lorsqu'il est survolé */
 }
-
-/* ... */
 
 #movieDetails {
   margin-top: 20px;
@@ -46,12 +45,14 @@ button:hover {
 
 #movieDetails h2 {
   font-size: 24px;
+  color: #FFD700; /* Jaune doré */
 }
 
 #movieDetails p {
   font-size: 16px;
   line-height: 1.5;
-  margin: 10px; /* Ajout de marges à l'overview */
+  margin: 10px;
+  color: #FFFFFF; /* Blanc */
 }
 
 #movieImage {
@@ -60,6 +61,6 @@ button:hover {
   background-size: cover;
   background-position: center;
   margin: 20px auto;
-  border: 2px solid #ff0;
+  border: 2px solid #FFD700;
   border-radius: 5px;
 }
