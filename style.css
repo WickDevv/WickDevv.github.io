@@ -37,6 +37,8 @@ button:hover {
   color: #2980b9;
 }
 
+/* ... */
+
 #movieDetails {
   margin-top: 20px;
   text-align: center;
@@ -49,11 +51,12 @@ button:hover {
 #movieDetails p {
   font-size: 16px;
   line-height: 1.5;
+  margin: 10px; /* Ajout de marges à l'overview */
 }
 
 #movieImage {
-  width: 300px; /* Ajustez la largeur de l'image selon vos besoins */
-  height: 450px; /* Ajustez la hauteur de l'image selon vos besoins */
+  width: 300px;
+  height: 450px;
   background-size: cover;
   background-position: center;
   margin: 20px auto;
