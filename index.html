@@ -19,18 +19,29 @@
   </div>
 
   <script>
+    const apiKey = '2c6cd4ceb33666821e89ac0236f6a6e3';
+    let lastRequestTime = 0;
+
     async function getRandomMovie() {
       try {
-        // Remplacez 'VOTRE_CLE_API_TMDB' par votre propre clé d'API TMDb
-        const apiKey = '2c6cd4ceb33666821e89ac0236f6a6e3';
-        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR`);
+        const now = Date.now();
+        const timeSinceLastRequest = now - lastRequestTime;
+
+        if (timeSinceLastRequest < 1000 / 35) {
+          // Si moins d'une seconde s'est écoulée depuis la dernière requête, attendez le temps nécessaire
+          const delay = 1000 / 35 - timeSinceLastRequest;
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        lastRequestTime = Date.now();
+
+        let page = Math.floor(Math.random() * 500) + 1;
+        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&page=${page}`);
         const data = await response.json();
 
-        // Choisissez un film au hasard parmi les résultats
         const randomIndex = Math.floor(Math.random() * data.results.length);
         const randomMovie = data.results[randomIndex];
 
-        // Affichez les détails du film dans la page
         const movieTitle = document.getElementById('movieTitle');
         const movieOverview = document.getElementById('movieOverview');
         const releaseDate = document.getElementById('releaseDate');
@@ -40,7 +51,6 @@
         movieOverview.textContent = randomMovie.overview;
         releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
-        // Ajoutez l'image du film
         movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
       } catch (error) {
         console.error('Erreur lors de la récupération des données du film', error);
