@@ -1,1 +1,39 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+h1 {
+  text-align: center;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#movieDetails {
+  margin-top: 20px;
+}
+
+#movieDetails h2 {
+  font-size: 24px;
+}
+
+#movieDetails p {
+  font-size: 16px;
+  line-height: 1.5;
+}
