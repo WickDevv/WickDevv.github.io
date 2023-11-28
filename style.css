@@ -1,32 +1,41 @@
 body {
   background-color: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+  color: #ff0; /* Jaune */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Utilise la hauteur de la vue pour centrer verticalement */
 }
 
 h1 {
-  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 button {
-  background-color: #3498db;
-  color: #fff;
+  background-color: transparent;
+  color: #ff0; /* Jaune */
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
+  border: 2px solid #ff0; /* Jaune */
   cursor: pointer;
   border-radius: 5px;
   margin-top: 20px;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: transparent;
+  border: 2px solid #2980b9; /* Bleu lorsqu'il est survolé */
+  color: #2980b9; /* Bleu lorsqu'il est survolé */
 }
 
 #movieDetails {
   margin-top: 20px;
+  text-align: center;
 }
 
 #movieDetails h2 {
