@@ -11,7 +11,7 @@
     <h1>Random Movie Generator</h1>
     <button onclick="getRandomMovie()">Obtenir un film au hasard</button>
     <button onclick="saveToCart()">Sauvegarder dans le panier</button>
-    <button onclick="showSavedMovies()">Afficher la liste sauvegardée</button>
+    <a href="panier.html">Voir le panier</a>
     <div id="movieDetails" style="display: none;">
       <h2 id="movieTitle"></h2>
       <p id="movieOverview"></p>
@@ -19,6 +19,11 @@
       <div id="movieImage"></div>
     </div>
   </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
 
   <script>
     const apiKey = '2c6cd4ceb33666821e89ac0236f6a6e3';
