@@ -1,7 +1,7 @@
 body {
-  background-color: #000000; /* Noir */
-  color: #F0F0F0; /* Gris clair (ou une autre teinte de gris que vous préférez) */
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive;
+  background-color: #1c1c1c; /* Noir */
+  color: #ffc107; /* Jaune */
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,55 +12,30 @@ body {
 }
 
 .container {
-  text-align: center;
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #1c1c1c; /* Noir */
+  border: 2px solid #ffc107; /* Jaune */
+  border-radius: 10px;
 }
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #FFD700; /* Jaune doré */
+  text-align: center;
 }
 
 button {
   background-color: transparent;
-  color: #FFD700;
+  color: #ffc107; /* Jaune */
+  border: 2px solid #ffc107; /* Jaune */
   padding: 10px 20px;
-  font-size: 16px;
-  border: 2px solid #FFD700;
+  margin-top: 10px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background-color: transparent;
-  border: 2px solid #FF0000; /* Rouge cinéma lorsqu'il est survolé */
-  color: #FF0000; /* Rouge cinéma lorsqu'il est survolé */
-}
-
-#movieDetails {
-  margin-top: 20px;
-  text-align: center;
-}
-
-#movieDetails h2 {
-  font-size: 24px;
-  color: #FFD700; /* Jaune doré */
-}
-
-#movieDetails p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px;
-  color: #F0F0F0; /* Gris clair (ou votre alternative préférée) */
-}
-
-#movieImage {
-  width: 300px;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  margin: 20px auto;
-  border: 2px solid #FFD700;
-  border-radius: 5px;
+  background-color: #ffc107; /* Jaune */
+  color: #1c1c1c; /* Noir */
 }
