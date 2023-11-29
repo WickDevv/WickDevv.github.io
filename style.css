@@ -37,25 +37,32 @@ button:hover {
 }
 
 #movieDetails {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-top: 20px;
 }
 
-#movieDetails h2 {
+#movieTitle {
   font-size: 24px;
+  margin-bottom: 10px;
 }
 
-#movieDetails p {
-  font-size: 16px;
-  line-height: 1.5;
+#movieOverview {
+  margin: 10px 0;
+}
+
+#releaseDate {
+  font-style: italic;
+  margin-top: 10px;
 }
 
 #movieImage {
-  width: 300px; /* Ajustez la largeur de l'image selon vos besoins */
-  height: 450px; /* Ajustez la hauteur de l'image selon vos besoins */
+  width: 100%;
+  height: 300px;
   background-size: cover;
   background-position: center;
-  margin: 20px auto;
-  border: 2px solid #ff0;
-  border-radius: 5px;
+  margin-top: 20px;
+  display: none; /* Cachez l'image au chargement initial */
 }
