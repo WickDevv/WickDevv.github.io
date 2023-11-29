@@ -28,41 +28,43 @@
       document.getElementById('movieImage').style.display = 'none';
     });
 
-    async function getRandomMovie() {
-      try {
-        const now = Date.now();
-        const timeSinceLastRequest = now - lastRequestTime;
+async function getRandomMovie() {
+  try {
+    const now = Date.now();
+    const timeSinceLastRequest = now - lastRequestTime;
 
-        if (timeSinceLastRequest < 1000 / 35) {
-          // Si moins d'une seconde s'est écoulée depuis la dernière requête, attendez le temps nécessaire
-          const delay = 1000 / 35 - timeSinceLastRequest;
-          await new Promise(resolve => setTimeout(resolve, delay));
-        }
-
-        lastRequestTime = Date.now();
-
-        let page = Math.floor(Math.random() * 500) + 1;
-        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&page=${page}`);
-        const data = await response.json();
-
-        const randomIndex = Math.floor(Math.random() * data.results.length);
-        const randomMovie = data.results[randomIndex];
-
-        const movieTitle = document.getElementById('movieTitle');
-        const movieOverview = document.getElementById('movieOverview');
-        const releaseDate = document.getElementById('releaseDate');
-        const movieImage = document.getElementById('movieImage');
-
-        movieTitle.textContent = randomMovie.title;
-        movieOverview.textContent = randomMovie.overview;
-        releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
-
-        movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
-        document.getElementById('movieImage').style.display = 'block';
-      } catch (error) {
-        console.error('Erreur lors de la récupération des données du film', error);
-      }
+    if (timeSinceLastRequest < 1000 / 35) {
+      // Si moins d'une seconde s'est écoulée depuis la dernière requête, attendez le temps nécessaire
+      const delay = 1000 / 35 - timeSinceLastRequest;
+      await new Promise(resolve => setTimeout(resolve, delay));
     }
+
+    lastRequestTime = Date.now();
+
+    let page = Math.floor(Math.random() * 500) + 1;
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&page=${page}`);
+    const data = await response.json();
+
+    const randomIndex = Math.floor(Math.random() * data.results.length);
+    const randomMovie = data.results[randomIndex];
+
+    const movieTitle = document.getElementById('movieTitle');
+    const movieOverview = document.getElementById('movieOverview');
+    const releaseDate = document.getElementById('releaseDate');
+    const movieImage = document.getElementById('movieImage');
+
+    movieTitle.textContent = randomMovie.title;
+    movieOverview.textContent = randomMovie.overview;
+    releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
+
+    movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
+    document.getElementById('movieDetails').style.display = 'block';
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données du film', error);
+  }
+}
+
+
 
     function saveToCart() {
       // Récupérez les données du film actuel
