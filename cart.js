@@ -72,3 +72,8 @@ function removeMovie(index) {
   // Réaffichez le panier
   displayCart();
 }
+
+function returnToMain() {
+  // Redirigez vers la page principale (index.html)
+  window.location.href = 'index.html';
+}
