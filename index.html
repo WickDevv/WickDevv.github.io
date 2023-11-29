@@ -13,10 +13,10 @@
     <button onclick="saveToCart()">Sauvegarder dans le panier</button>
     <button onclick="window.location.href='panier.html'">Voir le panier</button>
     <div id="movieDetails" style="display: none;">
-      <h2 id="movieTitle"></h2>
-      <p id="movieOverview"></p>
-      <p id="releaseDate"></p>
-      <div id="movieImage"></div>
+       <h2 id="movieTitle"></h2>
+       <p id="movieOverview"></p>
+       <p id="releaseDate"></p>
+       <div id="movieImage"></div>
     </div>
   </div>
 </body>
@@ -53,11 +53,12 @@ async function getRandomMovie() {
     const releaseDate = document.getElementById('releaseDate');
     const movieImage = document.getElementById('movieImage');
 
+    console.log(movieTitle, movieOverview, releaseDate, movieImage);
+
     movieTitle.textContent = randomMovie.title;
     movieOverview.textContent = randomMovie.overview;
     releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
-    // Correction de la construction de l'URL de l'image
     movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
   } catch (error) {
     console.error('Erreur lors de la récupération des données du film', error);
