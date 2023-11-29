@@ -55,11 +55,14 @@ async function getRandomMovie() {
 
     console.log(movieTitle, movieOverview, releaseDate, movieImage);
 
-    movieTitle.textContent = randomMovie.title;
-    movieOverview.textContent = randomMovie.overview;
-    releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
+    document.getElementById('movieTitle').textContent = randomMovie.title;
+    document.getElementById('movieOverview').textContent = randomMovie.overview;
+    document.getElementById('releaseDate').textContent = `Date de sortie : ${randomMovie.release_date}`;
 
-    movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
+    // Correction de la construction de l'URL de l'image
+    document.getElementById('movieImage').style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
+
+    // Faites apparaître movieDetails
     document.getElementById('movieDetails').style.display = 'block';
   } catch (error) {
     console.error('Erreur lors de la récupération des données du film', error);
