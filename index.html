@@ -26,12 +26,7 @@
   <script>
     const apiKey = '2c6cd4ceb33666821e89ac0236f6a6e3';
     let lastRequestTime = 0;
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Masquer le cadre de l'image au chargement initial
-      document.getElementById('movieImage').style.display = 'none';
-    });
-
+    
 async function getRandomMovie() {
   try {
     const now = Date.now();
@@ -62,7 +57,6 @@ async function getRandomMovie() {
     releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
     // Correction de la construction de l'URL de l'image
-    movieImage.style.display = 'block';
     movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
   } catch (error) {
     console.error('Erreur lors de la récupération des données du film', error);
