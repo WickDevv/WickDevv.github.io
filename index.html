@@ -8,9 +8,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>Qu’est ce qu'on regarde ce soir ?</h1>
+    <h1>Random Movie Generator</h1>
     <button onclick="getRandomMovie()">Obtenir un film au hasard</button>
-    <div id="movieDetails">
+    <button onclick="saveToCart()">Sauvegarder dans le panier</button>
+    <div id="movieDetails" style="display: none;">
       <h2 id="movieTitle"></h2>
       <p id="movieOverview"></p>
       <p id="releaseDate"></p>
@@ -21,6 +22,11 @@
   <script>
     const apiKey = '2c6cd4ceb33666821e89ac0236f6a6e3';
     let lastRequestTime = 0;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Masquer le cadre de l'image au chargement initial
+      document.getElementById('movieImage').style.display = 'none';
+    });
 
     async function getRandomMovie() {
       try {
@@ -52,9 +58,36 @@
         releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
         movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
+        document.getElementById('movieImage').style.display = 'block';
       } catch (error) {
         console.error('Erreur lors de la récupération des données du film', error);
       }
+    }
+
+    function saveToCart() {
+      // Récupérez les données du film actuel
+      const movieTitle = document.getElementById('movieTitle').textContent;
+      const movieOverview = document.getElementById('movieOverview').textContent;
+      const releaseDate = document.getElementById('releaseDate').textContent;
+
+      // Créez un objet représentant les détails du film
+      const movieDetails = {
+        title: movieTitle,
+        overview: movieOverview,
+        releaseDate: releaseDate,
+        // Vous pouvez ajouter d'autres détails du film si nécessaire
+      };
+
+      // Récupérez le panier actuel depuis le stockage local
+      let cart = JSON.parse(localStorage.getItem('movieCart')) || [];
+
+      // Ajoutez les détails du film au panier
+      cart.push(movieDetails);
+
+      // Enregistrez le panier mis à jour dans le stockage local
+      localStorage.setItem('movieCart', JSON.stringify(cart));
+
+      alert('Film ajouté au panier avec succès !');
     }
   </script>
 </body>
