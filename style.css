@@ -12,6 +12,10 @@ body {
 }
 
 .container {
+  text-align: center;
+}
+
+.main-container {
   max-width: 800px;
   margin: 20px;
   padding: 20px;
