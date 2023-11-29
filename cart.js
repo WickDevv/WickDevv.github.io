@@ -1,3 +1,5 @@
+// cart.js
+
 document.addEventListener('DOMContentLoaded', function () {
   displayCart();
 });
