@@ -62,7 +62,7 @@ async function getRandomMovie() {
     releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
     // Correction de la construction de l'URL de l'image
-    movieImage.style.backgroundImage = `url('https://www.themoviedb.org/t/p/w500${randomMovie.poster_path}')`;
+    movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
     
     document.getElementById('movieDetails').style.display = 'block';
   } catch (error) {
