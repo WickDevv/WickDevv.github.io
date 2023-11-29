@@ -12,7 +12,12 @@ body {
 }
 
 .container {
-  text-align: center;
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #1c1c1c; /* Noir */
+  border: 2px solid #ffc107; /* Jaune */
+  border-radius: 10px;
 }
 
 h1 {
