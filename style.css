@@ -1,7 +1,7 @@
 body {
-  font-family: 'Comic Sans MS', cursive;
-  background-color: #1c1c1c; /* Noir */
-  color: #ffc107; /* Jaune */
+  background-color: #000;
+  color: #ff0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,16 +12,12 @@ body {
 }
 
 .container {
-  max-width: 800px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #1c1c1c; /* Noir */
-  border: 2px solid #ffc107; /* Jaune */
-  border-radius: 10px;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -38,4 +34,28 @@ button {
 button:hover {
   background-color: #ffc107; /* Jaune */
   color: #1c1c1c; /* Noir */
+}
+
+#movieDetails {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#movieDetails h2 {
+  font-size: 24px;
+}
+
+#movieDetails p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#movieImage {
+  width: 300px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 450px; /* Ajustez la hauteur de l'image selon vos besoins */
+  background-size: cover;
+  background-position: center;
+  margin: 20px auto;
+  border: 2px solid #ff0;
+  border-radius: 5px;
 }
