@@ -11,6 +11,7 @@
     <h1>Random Movie Generator</h1>
     <button onclick="getRandomMovie()">Obtenir un film au hasard</button>
     <button onclick="saveToCart()">Sauvegarder dans le panier</button>
+    <button onclick="showSavedMovies()">Afficher la liste sauvegardée</button>
     <div id="movieDetails" style="display: none;">
       <h2 id="movieTitle"></h2>
       <p id="movieOverview"></p>
@@ -57,11 +58,31 @@ async function getRandomMovie() {
     movieOverview.textContent = randomMovie.overview;
     releaseDate.textContent = `Date de sortie : ${randomMovie.release_date}`;
 
-    movieImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${randomMovie.poster_path})`;
+    // Correction de la construction de l'URL de l'image
+    movieImage.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500${randomMovie.poster_path}')`;
+    
     document.getElementById('movieDetails').style.display = 'block';
   } catch (error) {
     console.error('Erreur lors de la récupération des données du film', error);
   }
+}
+
+function showSavedMovies() {
+  // Récupérez le panier actuel depuis le stockage local
+  const cart = JSON.parse(localStorage.getItem('movieCart')) || [];
+
+  if (cart.length === 0) {
+    alert('Aucun film sauvegardé dans le panier.');
+    return;
+  }
+
+  let movieList = 'Films sauvegardés :\n\n';
+
+  cart.forEach((movie, index) => {
+    movieList += `${index + 1}. ${movie.title}\n`;
+  });
+
+  alert(movieList);
 }
 
 
