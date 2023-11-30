@@ -47,3 +47,8 @@ button:hover {
   background-color: #ffc107; /* Jaune */
   color: #1c1c1c; /* Noir */
 }
+
+button img {
+  width: 24px;
+  height: 24px;
+}
