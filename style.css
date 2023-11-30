@@ -67,3 +67,9 @@ button:hover {
   border: 2px solid #ff0;
   border-radius: 5px;
 }
+
+.view-cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
