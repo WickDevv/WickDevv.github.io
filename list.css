@@ -51,12 +51,11 @@ button:hover {
 button img {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease; /* Ajoutez une transition pour une animation plus douce */
 
   /* Définissez l'effet de filtre pour inverser les couleurs au survol */
-  filter: invert(100%);
+  filter: invert(0%);
 }
 
 button:hover img {
-  filter: invert(0%);
+  filter: invert(100%);
 }
