@@ -19,8 +19,8 @@ function displayCart() {
         <li>
           ${index + 1}. 
           <span>${movie.title} - ${movie.releaseDate}</span>
-          <button onclick="moveUp()"> <img src="haut.png" alt="Monter"></button>
-          <button onclick="moveDown()"> <img src="bas.png" alt="Descendre"></button>
+          <button onclick="moveUp(${index})"> <img src="haut.png" alt="Monter"></button>
+          <button onclick="moveDown(${index})"> <img src="bas.png" alt="Descendre"></button>
           <button onclick="removeMovie(${index})"> <img src="croix.png" alt="Supprimer"></button>
         </li>`;
     });
