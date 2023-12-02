@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c; /* Fond noir */
+  color: #fff; /* Texte blanc */
+  font-family: 'Arial', sans-serif;
+  height: 100vh; /* Ajuster la hauteur à 100% de la vue du port */
+  display: flex;
+  align-items: center; /* Centrer verticalement */
+}
+
+.hub-container {
+  text-align: center;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 80px; /* Espacement du haut pour éviter de chevaucher le titre */
+}
+
+.button {
+  display: inline-block;
+  margin: 10px; /* Espacement entre les boutons */
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid transparent; /* Bordure transparente */
+  border-radius: 5px;
+  text-align: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Couleurs des boutons */
+.red { border-color: #ffc107; color: #fff; }
+.blue { border-color: #EC53FC; color: #fff; }
+.green { border-color: #4CAF50; color: #fff; }
+.yellow { border-color: #FFD700; color: #000; }
+
+/* Fond transparent et changement de couleur au survol */
+.button:hover {
+  background-color: transparent;
+  border-color: #fff; /* Couleur de la bordure au survol */
+}
