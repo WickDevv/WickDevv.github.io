@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Genre Search</title>
+  <link rel="stylesheet" href="style_css/style_musique.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Spotify Genre Search</h1>
+    <label for="genreInput">Choisir un genre :</label>
+    <select id="genreInput">
+      <option value="pop">Pop</option>
+      <option value="rock">Rock</option>
+      <option value="hip-hop">Hip Hop</option>
+      <!-- Ajoutez d'autres options de genre au besoin -->
+    </select>
+    <button onclick="getRandomSong()">Obtenir une musique au hasard</button>
+    <div id="musicDetails" style="display: none;">
+      <div id="songDetails">
+        <h2 id="songTitle"></h2>
+        <p id="songArtist"></p>
+        <p id="songListeners"></p>
+        <p id="songPlayCount"></p>
+        <img id="albumCover" src="" alt="Album Cover">
+      </div>
+    </div>
+    <script src="js/main_musique.js"></script>
+  </div>
+</body>
+</html>
